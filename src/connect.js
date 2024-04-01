@@ -32,3 +32,37 @@ export const onCreate = async (object) => {
 
     return t;
 }
+
+// list one user
+export const onListoneuser = async () => {
+    const t = await axios.get(`http://localhost:8080/energymanagement/${sessionStorage.getItem('user')}`, {
+        headers: {
+            "Authorization": `Basic ${sessionStorage.getItem('auth')} `
+        }
+    })
+
+    return t;
+}
+
+// urladd
+
+export const onAddurls = async (object) => {
+    const t = await axios.post(`http://localhost:8080/energymanagement/linkCreate`, object, {
+        headers: {
+            "Authorization": `Basic ${sessionStorage.getItem('auth')}`
+        }
+    })
+    return t;
+}
+
+// getparicular urls only
+
+export const onListoneuserURLS = async () => {
+    const t = await axios.get(`http://localhost:8080/energymanagement/getall/${sessionStorage.getItem('user')}`, {
+        headers: {
+            "Authorization": `Basic ${sessionStorage.getItem('auth')}`
+        }
+    })
+
+    return t;
+}

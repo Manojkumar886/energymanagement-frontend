@@ -1,4 +1,6 @@
 import { Addtitle } from "./addtitle";
+import { Listurldetails } from "./listurls";
+import { Listuserdetails } from "./listuserdetails";
 import { Loginpage } from "./loginpage";
 import { Mainpage } from "./mainpage";
 
@@ -13,6 +15,8 @@ function App() {
               <Mainpage />
               <Routes>
                 <Route path='addtitle' exact element={<Addtitle />} />
+                <Route path="listuserdetails" exact element={<Listuserdetails />} />
+                <Route path="listurls" exact element={< Listurldetails />} />
               </Routes>
             </BrowserRouter>
           </>
