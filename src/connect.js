@@ -73,7 +73,7 @@ export const onUpdateurls = async (obj) => {
     const t = await axios.put(`http://localhost:8080/energymanagement/linkUpdate`, obj,
         {
             headers: {
-                "Authorization": `Basic  ${sessionStorage.getItem('auth')}`
+                "Authorization": `Basic ${sessionStorage.getItem('auth')}`
             }
         })
 }
@@ -81,12 +81,12 @@ export const onUpdateurls = async (obj) => {
 // read single url
 
 export const onsingleurl = async (title) => {
-    const t = await axios.get(`http://localhost:8080/energymanagement/getoneurl/${title}`,
-        {
-            headers: {
-                "Authorization": `Basic  ${sessionStorage.getItem('auth')}`
-            }
-        })
+    alert(title);
+    const t = await axios.get(`http://localhost:8080/energymanagement/getoneurl/${title}`, {
+        headers: {
+            "Authorization": `Basic ${sessionStorage.getItem('auth')}`
+        }
+    })
 
     return t;
 

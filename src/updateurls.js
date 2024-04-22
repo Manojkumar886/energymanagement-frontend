@@ -19,26 +19,32 @@ export const Updatetitle = () => {
             }
         })
     }
-    // const [oneuser, setOneuser] = useState({});
+    const [oneuser, setOneuser] = useState({});
+
+    const getsingleurl = async () => {
+        const t = await onsingleurl(title);
+        setUrldetails(t.data);
+    }
+
+    const callreadingvalue = async () => {
+        const t = await onListoneuser();
+        setOneuser(t.data);
+    }
+
+    useEffect(() => {
+        callreadingvalue();
+    }, [])
 
 
-
-    // const callreadingvalue = async () => {
-    //     const t = await onListoneuser();
-    //     setOneuser(t.data);
-    // }
-
-    // useEffect(() => {
-    //     callreadingvalue();
-    // }, [])
-
+    useEffect(() => {
+        getsingleurl();
+    }, [])
 
 
     const updateurl = async () => {
-        // urldetails.userdetails = oneuser;
+        urldetails.userdetails = oneuser;
         alert(JSON.stringify(urldetails));
         const t = await onUpdateurls(urldetails);
-        alert(t.data);
         navi("/listurls")
     }
     return (
