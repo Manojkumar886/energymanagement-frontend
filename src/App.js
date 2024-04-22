@@ -5,6 +5,7 @@ import { Loginpage } from "./loginpage";
 import { Mainpage } from "./mainpage";
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Updatetitle } from "./updateurls";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
                 <Route path='addtitle' exact element={<Addtitle />} />
                 <Route path="listuserdetails" exact element={<Listuserdetails />} />
                 <Route path="listurls" exact element={< Listurldetails />} />
+                <Route path="editurls/:title" exact element={<Updatetitle />} />
               </Routes>
             </BrowserRouter>
           </>

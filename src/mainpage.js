@@ -15,6 +15,7 @@ export const Mainpage = () => {
                         <Nav>
                             <Nav.Link href='addtitle'>ADD_TITLE</Nav.Link>
                             <Nav.Link href='listurls'>LIST_URL</Nav.Link>
+                            <Nav.Link href='updateurls'>EDIT_URL</Nav.Link>
                             <Nav.Link href='listuserdetails'>USERDETAILS</Nav.Link>
                         </Nav>
                         <div className='d-flex ms-5'>
